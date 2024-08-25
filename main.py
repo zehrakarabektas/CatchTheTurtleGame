@@ -34,8 +34,8 @@ message_display.penup()
 message_display.hideturtle()
 
 def turtle_draw():
-    x = random.randint(-220, 250)
-    y = random.randint(-220, 250)
+    x = random.randint(-210, 210)
+    y = random.randint(-210, 210)
     turtle_object.goto(x, y)
     turtle_object.showturtle()
 
