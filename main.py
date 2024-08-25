@@ -13,7 +13,6 @@ score_display.color("dark blue")
 score_display.hideturtle()
 score_display.write(f"SCORE: {score}", font=("Arial", 16, "normal"))
 
-# Create the turtle object
 turtle_object = turtle.Turtle()
 turtle_object.penup()
 turtle_object.shape("turtle")
