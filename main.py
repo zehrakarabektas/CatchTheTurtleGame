@@ -8,11 +8,12 @@ drawing_board.title("Catch The Turtle")
 score = 0
 score_display = turtle.Turtle()
 score_display.penup()
-score_display.goto(-40, 250)
+score_display.goto(0, 250)
 score_display.color("dark blue")
 score_display.hideturtle()
-score_display.write(f"SCORE: {score}",move=False, font=("Arial", 16, "normal"))
-
+score_display.write(f"SCORE: {score}",move=False,align="center", font=("Arial", 16, "normal"))
+score_display.speed(0)
+# Create the turtle object
 turtle_object = turtle.Turtle()
 turtle_object.penup()
 turtle_object.shape("turtle")
@@ -23,13 +24,13 @@ turtle_object.speed(0)
 level_display = turtle.Turtle()
 level_display.color("red")
 level_display.penup()
-level_display.goto(-40, 280)
+level_display.goto(0, 280)
 level_display.hideturtle()
-level_display.write(f"LEVEL: {1}",move=False, font=("Arial", 16, "normal"))
+level_display.write(f"LEVEL: {1}",move=False,align="center" ,font=("Arial", 16, "normal"))
 
 def turtle_draw():
-    x = random.randint(-250, 250)
-    y = random.randint(-250, 250)
+    x = random.randint(-220, 250)
+    y = random.randint(-220, 250)
     turtle_object.goto(x, y)
     turtle_object.showturtle()
 
@@ -38,20 +39,20 @@ def update_score(x, y):
     if turtle_object.distance(x, y) < 20:
         score += 1
         score_display.clear()
-        score_display.write(f"SCORE: {score}",move=False, font=("Arial", 16, "normal"))
+        score_display.write(f"SCORE: {score}",move=False,align="center", font=("Arial", 16, "normal"))
 
 def end_game(message):
     turtle_object.hideturtle()
-    score_display.goto(-50, 220)
+    score_display.goto(0, 220)
     score_display.color("black")
     turtle_draw()
-    score_display.write(message,move=False, font=("Arial", 16, "normal"))
+    score_display.write(message,move=False,align="center", font=("Arial", 16, "normal"))
 
 def game_level(message):
     turtle_object.hideturtle()
-    level_display.goto(-40, 280)
+    level_display.goto(0, 280)
     turtle_draw()
-    level_display.write(message,move=False, font=("Arial", 16, "normal"))
+    level_display.write(message,move=False,align="center", font=("Arial", 16, "normal"))
 drawing_board.onscreenclick(update_score)
 
 level=5
